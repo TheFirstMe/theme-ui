@@ -10,9 +10,12 @@
   },
   "license": "MIT",
   "peerDependencies": {
+    "@material-ui/core": "^4.9.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "theme-ui": "^0.3.0",
+    "theme-ui": "^0.3.0"
+  },
+  "devDependencies": {
     "@material-ui/core": "^4.9.9"
   }
 }
