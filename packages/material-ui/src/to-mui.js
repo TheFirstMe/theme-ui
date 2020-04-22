@@ -1,7 +1,3 @@
-import { createMuiTheme } from "@material-ui/core/styles"
-// default keys used by Material UI
-// import { keys as muiBpKeys } from "@material-ui/core/styles/createBreakpoints"
-
 const toMuiBp = (tuiBp) => {
     // use Material UI defaults if breakpoints is not provided
     if (tuiBp && !tuiBp.length) return {}
