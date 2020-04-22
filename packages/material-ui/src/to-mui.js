@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles"
 // default keys used by Material UI
-import { keys as muiBpKeys } from "@material-ui/core/styles/createBreakpoints"
+// import { keys as muiBpKeys } from "@material-ui/core/styles/createBreakpoints"
 
 const toMuiBp = (tuiBp) => {
     // use Material UI defaults if breakpoints is not provided
@@ -8,6 +8,8 @@ const toMuiBp = (tuiBp) => {
 
     // store breakpoints for Material UI here
     const muiBpValues = {}
+
+    const muiBpKeys = ["xs", "sm", "md", "lg", "xl"]
 
     // Theme UI allows array of breakpoint values
     // Material UI requires (key, value) pair of breakpoint values
@@ -18,7 +20,7 @@ const toMuiBp = (tuiBp) => {
     // Material UI value for breakpoints key
     return {
         keys: muiBpKeys,
-        values: muiBpValues
+        values: muiBpValues,
     }
 }
 
@@ -207,14 +209,14 @@ const toMui = (tuiTheme, tuiMode = 'light') => {
     // Material UI Spacing
     const muiSpace = toMuiSpace(tuiSpace)
 
-    // createMuiTheme - this modifies default Material UI theme with values from Theme UI theme
-    const muiTheme = createMuiTheme({
+    // Theme object that should be passed to createMuiTheme
+    const muiTheme = {
         ...(muiBp ? { breakpoints: { ...muiBp } } : {}),
         ...(muiColors ? { palette: { ...muiColors } } : {}),
         ...(muiTyp ? { typography: { ...muiTyp } } : {}),
         ...(muiSpace ? { spacing: [...muiSpace] } : {}),
         ...(zIndices ? { zIndex: { ...zIndices } } : {}),
-    })
+    }
 
     return muiTheme
 }
