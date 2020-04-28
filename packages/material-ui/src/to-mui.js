@@ -1,6 +1,6 @@
 const toMuiBp = (tuiBp) => {
     // use Material UI defaults if breakpoints is not provided
-    if (tuiBp && !tuiBp.length) return {}
+    if (!tuiBp) return {}
 
     // store breakpoints for Material UI here
     const muiBpValues = {}

@@ -1,1 +1,10 @@
-module.exports = require('../../babel.config')
+const rootConfig = require('../../babel.config')
+
+module.exports = {
+    ...rootConfig,
+    env: {
+        test: {
+            plugins: [ ...rootConfig.env.test.plugins, 'babel-plugin-rewire']
+        }
+    }
+}
